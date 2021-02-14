@@ -1,3 +1,8 @@
+"""
+    Copyright (c) 2021 Brad Duy
+    Unauthorized copying of this file, via any medium is strictly prohibited
+"""
+
 import streamlit as st 
 from datetime import date 
 import yfinance as yf 
@@ -5,12 +10,12 @@ from fbprophet import Prophet
 from fbprophet.plot import plot_plotly
 from plotly import graph_objs as go 
 
-START = '2018-01-01'
+START = '2015-01-01'
 TODAY = date.today().strftime('%Y-%m-%d')
 
 st.title("Duy's stock prediction app")
 
-stocks = ("TSLA", "AAPL", "GOOG", "GME")
+stocks = ("BTC-USD", "TSLA", "AAPL", "GOOG", "GME")
 selectedStock = st.selectbox("Select dataset for prediction", stocks)
 
 numberYears = st.slider("Years of prediction: ", 1, 4)
